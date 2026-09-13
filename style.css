@@ -19,13 +19,23 @@ header {
 
 header h1 {
   color: #e67e22;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 800;
   margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+header h1 img, header h1 span, header h1::before {
+  font-size: 3rem;
+  width: 42px;
+  height: 42px;
 }
 
 header p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #666;
 }
 
@@ -33,26 +43,27 @@ header p {
   display: none !important;
 }
 
-/* --- VISTA DE DÍAS (UNA SOLA FILA POR DÍA / LISTA VERTICAL) --- */
+/* --- VISTA DE DÍAS (TARJETAS ALTAS QUE OCUPAN MÁS PANTALLA) --- */
 .grid-dias {
   display: flex;
-  flex-direction: column; /* Organiza los días uno debajo del otro */
-  gap: 12px;
+  flex-direction: column;
+  gap: 18px; /* Mayor espacio vertical entre tarjetas */
   max-width: 800px;
   margin: 0 auto;
 }
 
 .card-dia {
   background: white;
-  border-radius: 12px;
-  padding: 18px 20px;
+  border-radius: 16px;
+  padding: 30px 25px; /* Aumentamos la altura interna de cada tarjeta */
+  min-height: 85px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.07);
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease;
-  border-left: 6px solid #e67e22;
+  border-left: 8px solid #e67e22;
 }
 
 .card-dia:hover, .card-dia:active {
@@ -62,17 +73,17 @@ header p {
 
 .card-dia h2 {
   color: #2c3e50;
-  font-size: 1.4rem;
+  font-size: 1.8rem; /* Nombre del día más grande */
   font-weight: 700;
 }
 
 .card-dia p {
   color: #e67e22;
-  font-size: 1rem;
+  font-size: 1.3rem; /* Botón 'Ver menú →' más grande */
   font-weight: bold;
 }
 
-/* --- VISTA DE DETALLE --- */
+/* --- VISTA DE DETALLE DE PLATILLOS --- */
 .vista-detalle {
   max-width: 800px;
   margin: 0 auto;
@@ -82,51 +93,51 @@ header p {
   background-color: #e67e22;
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-size: 1rem;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   width: 100%;
 }
 
 #titulo-dia {
   color: #2c3e50;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  margin-bottom: 22px;
   text-align: center;
 }
 
 .grid-comidas {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .card-comida {
   background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-  border-top: 5px solid #e67e22;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-top: 6px solid #e67e22;
 }
 
 .card-comida h3 {
   color: #2c3e50;
-  margin-bottom: 8px;
-  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 
 .card-comida .platillo {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: #e67e22;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .card-comida .descripcion {
   color: #555;
-  font-size: 0.95rem;
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.5;
 }
