@@ -7,42 +7,97 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <h1>🍲 Recetas de la Semana</h1>
     <p>Selecciona un día para ver el menú</p>
   </header>
 
-  <!-- Vista Principal: Cuadrícula de Días -->
+  <!-- VISTA 1: DÍAS DE LA SEMANA -->
   <main id="vista-dias" class="grid-dias">
-    <!-- Se genera dinámicamente desde app.js -->
+    <div class="card-dia" onclick="verComidas('lunes')">
+      <h2>Lunes</h2>
+      <p>Ver menú →</p>
+    </div>
+    <div class="card-dia" onclick="verComidas('martes')">
+      <h2>Martes</h2>
+      <p>Ver menú →</p>
+    </div>
+    <div class="card-dia" onclick="verComidas('miercoles')">
+      <h2>Miércoles</h2>
+      <p>Ver menú →</p>
+    </div>
+    <div class="card-dia" onclick="verComidas('jueves')">
+      <h2>Jueves</h2>
+      <p>Ver menú →</p>
+    </div>
+    <div class="card-dia" onclick="verComidas('viernes')">
+      <h2>Viernes</h2>
+      <p>Ver menú →</p>
+    </div>
+    <div class="card-dia" onclick="verComidas('sabado')">
+      <h2>Sábado</h2>
+      <p>Ver menú →</p>
+    </div>
+    <div class="card-dia" onclick="verComidas('domingo')">
+      <h2>Domingo</h2>
+      <p>Ver menú →</p>
+    </div>
   </main>
 
-  <!-- Vista Detalle: Desayuno, Almuerzo y Cena -->
-  <main id="vista-detalle" class="vista-detalle oculta">
-    <button id="btn-volver" class="btn-volver">← Volver a los días</button>
-    <h2 id="titulo-dia"></h2>
+  <!-- VISTA 2: OPCIONES DEL DÍA (Desayuno, Almuerzo, Cena) -->
+  <main id="vista-comidas" class="vista-detalle oculta">
+    <button class="btn-volver" onclick="volverADias()">← Volver a los días</button>
+    <h2 id="titulo-dia">Menú del Día</h2>
     
     <div class="grid-comidas">
-      <div class="card-comida">
-        <h3>🍳 Desayuno</h3>
-        <p class="platillo" id="desayuno-platillo"></p>
-        <p class="descripcion" id="desayuno-desc"></p>
+      <div class="card-comida-link" onclick="verReceta('desayuno')">
+        <div class="comida-header">
+          <h3>🍳 Desayuno</h3>
+          <span class="badge-ingresar">Ingresar →</span>
+        </div>
+        <p id="preview-desayuno" class="platillo-preview"></p>
       </div>
 
-      <div class="card-comida">
-        <h3>🍗 Almuerzo</h3>
-        <p class="platillo" id="almuerzo-platillo"></p>
-        <p class="descripcion" id="almuerzo-desc"></p>
+      <div class="card-comida-link" onclick="verReceta('almuerzo')">
+        <div class="comida-header">
+          <h3>🍗 Almuerzo</h3>
+          <span class="badge-ingresar">Ingresar →</span>
+        </div>
+        <p id="preview-almuerzo" class="platillo-preview"></p>
       </div>
 
-      <div class="card-comida">
-        <h3>🥗 Cena</h3>
-        <p class="platillo" id="cena-platillo"></p>
-        <p class="descripcion" id="cena-desc"></p>
+      <div class="card-comida-link" onclick="verReceta('cena')">
+        <div class="comida-header">
+          <h3>🥗 Cena</h3>
+          <span class="badge-ingresar">Ingresar →</span>
+        </div>
+        <p id="preview-cena" class="platillo-preview"></p>
       </div>
     </div>
   </main>
 
-  <script src="app.js"></script>
+  <!-- VISTA 3: DETALLE COMPLETO DE LA RECETA SELECCIONADA -->
+  <main id="vista-receta" class="vista-detalle oculta">
+    <button class="btn-volver" onclick="volverAComidas()">← Volver a las comidas</button>
+    
+    <div class="card-receta-detalle">
+      <span id="receta-tipo-tag" class="tipo-tag">🍳 Desayuno</span>
+      <h2 id="receta-titulo">Título de la receta</h2>
+      <p id="receta-descripcion" class="descripcion-full"></p>
+
+      <div class="seccion-receta">
+        <h3>🛒 Ingredientes</h3>
+        <ul id="receta-ingredientes"></ul>
+      </div>
+
+      <div class="seccion-receta">
+        <h3>👨‍🍳 Preparación</h3>
+        <ol id="receta-preparacion"></ol>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
