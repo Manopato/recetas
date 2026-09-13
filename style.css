@@ -19,19 +19,9 @@ header {
 
 header h1 {
   color: #e67e22;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-header h1 img, header h1 span, header h1::before {
-  font-size: 3rem;
-  width: 42px;
-  height: 42px;
 }
 
 header p {
@@ -43,11 +33,11 @@ header p {
   display: none !important;
 }
 
-/* --- VISTA DE DÍAS (TARJETAS ALTAS QUE OCUPAN MÁS PANTALLA) --- */
+/* --- VISTA DE DÍAS --- */
 .grid-dias {
   display: flex;
   flex-direction: column;
-  gap: 18px; /* Mayor espacio vertical entre tarjetas */
+  gap: 18px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -55,35 +45,34 @@ header p {
 .card-dia {
   background: white;
   border-radius: 16px;
-  padding: 30px 25px; /* Aumentamos la altura interna de cada tarjeta */
+  padding: 28px 25px;
   min-height: 85px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.07);
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
   border-left: 8px solid #e67e22;
 }
 
-.card-dia:hover, .card-dia:active {
-  transform: scale(1.01);
+.card-dia:active {
+  transform: scale(0.98);
   background-color: #fffaf5;
 }
 
 .card-dia h2 {
   color: #2c3e50;
-  font-size: 1.8rem; /* Nombre del día más grande */
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
 .card-dia p {
   color: #e67e22;
-  font-size: 1.3rem; /* Botón 'Ver menú →' más grande */
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
-/* --- VISTA DE DETALLE DE PLATILLOS --- */
+/* --- VISTAS DE DETALLE (COMIDAS Y RECETA) --- */
 .vista-detalle {
   max-width: 800px;
   margin: 0 auto;
@@ -98,8 +87,13 @@ header p {
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   width: 100%;
+  box-shadow: 0 4px 8px rgba(230, 126, 34, 0.25);
+}
+
+.btn-volver:active {
+  background-color: #d35400;
 }
 
 #titulo-dia {
@@ -109,35 +103,106 @@ header p {
   text-align: center;
 }
 
+/* TARJETAS DE SELECCIÓN DE COMIDA */
 .grid-comidas {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.card-comida {
+.card-comida-link {
   background: white;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   border-top: 6px solid #e67e22;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.card-comida h3 {
-  color: #2c3e50;
+.card-comida-link:active {
+  transform: scale(0.98);
+  background-color: #fffaf5;
+}
+
+.comida-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
-  font-size: 1.4rem;
 }
 
-.card-comida .platillo {
-  font-weight: bold;
-  font-size: 1.25rem;
+.comida-header h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.badge-ingresar {
+  background-color: #ffe6d5;
   color: #e67e22;
-  margin-bottom: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-.card-comida .descripcion {
-  color: #555;
-  font-size: 1rem;
+.platillo-preview {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #e67e22;
+}
+
+/* TARJETA DETALLE DE RECETA */
+.card-receta-detalle {
+  background: white;
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tipo-tag {
+  display: inline-block;
+  background-color: #e67e22;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#receta-titulo {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.descripcion-full {
+  color: #666;
+  font-size: 1.15rem;
+  margin-bottom: 25px;
   line-height: 1.5;
+}
+
+.seccion-receta {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.seccion-receta h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+
+.seccion-receta ul, .seccion-receta ol {
+  padding-left: 22px;
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.seccion-receta li {
+  margin-bottom: 8px;
 }

@@ -1,100 +1,248 @@
-const menuSemana = [
-  {
-    dia: "Lunes",
-    desayuno: { receta: "Huevos revueltos con espinaca", desc: "Acompañados de tostadas integrales y café." },
-    almuerzo: { receta: "Pechuga a la plancha", desc: "Servida con ensalada fresca y arroz integral." },
-    cena: { receta: "Crema de verduras", desc: "Sopa ligera de calabacín y zanahoria." }
+const recetas = {
+  lunes: {
+    nombreDia: "Lunes",
+    desayuno: {
+      nombre: "Huevos revueltos con espinaca",
+      descripcion: "Acompañados de tostadas integrales y café.",
+      ingredientes: [
+        "2 huevos grandes",
+        "1 taza de espinaca fresca picada",
+        "2 rebanadas de pan integral",
+        "1 cucharadita de aceite de oliva",
+        "Sal y pimienta al gusto"
+      ],
+      preparacion: [
+        "Calienta el aceite de oliva en una sartén a fuego medio.",
+        "Agrega la espinaca y saltea durante 1-2 minutos.",
+        "Bate los huevos con una pizca de sal y agrégalos a la sartén.",
+        "Cocina revolviendo suavemente hasta que queden esponjosos.",
+        "Sirve acompañado de tostadas e infusión o café."
+      ]
+    },
+    almuerzo: {
+      nombre: "Pechuga a la plancha",
+      descripcion: "Servida con ensalada fresca y arroz integral.",
+      ingredientes: [
+        "1 pechuga de pollo desosada",
+        "1/2 taza de arroz integral cocido",
+        "Ensalada mixta (lechuga, tomate, pepino)",
+        "Limón, sal y orégano"
+      ],
+      preparacion: [
+        "Sazona la pechuga de pollo con sal, ajo y orégano.",
+        "Cocina en la plancha 5 minutos por lado hasta dorar.",
+        "Prepara la ensalada aderezada con limón y aceite.",
+        "Sirve junto con el arroz caliente."
+      ]
+    },
+    cena: {
+      nombre: "Crema de verduras",
+      descripcion: "Sopa ligera de calabacín y zanahoria.",
+      ingredientes: [
+        "1 calabacín mediano",
+        "2 zanahorias",
+        "1/2 cebolla",
+        "1 taza de caldo de verduras"
+      ],
+      preparacion: [
+        "Pica las verduras y cocina en el caldo por 15 minutos.",
+        "Licúa todo hasta obtener una crema suave.",
+        "Sirve bien caliente con sal al gusto."
+      ]
+    }
   },
-  {
-    dia: "Martes",
-    desayuno: { receta: "Avena con frutas y miel", desc: "Avena caliente con banano y canela." },
-    almuerzo: { receta: "Tacos de pescado", desc: "Pescado a la plancha con ensalada de repollo y guacamole." },
-    cena: { receta: "Ensalada César con pollo", desc: "Lechuga, pollo a la parrilla y queso parmesano." }
+  martes: {
+    nombreDia: "Martes",
+    desayuno: {
+      nombre: "Avena con frutas y miel",
+      descripcion: "Avena cremosa con banano y fresas.",
+      ingredientes: ["1/2 taza de avena", "1 taza de leche", "1 banano picado", "Miel al gusto"],
+      preparacion: ["Cocina la avena con la leche 5 minutos.", "Sirve con las frutas y un hilo de miel."]
+    },
+    almuerzo: {
+      nombre: "Carne salteada con vegetales",
+      descripcion: "Tiras de carne con pimentón y puré de papa.",
+      ingredientes: ["200g de carne de res", "Pimentón y cebolla", "Puré de papa"],
+      preparacion: ["Saltea la carne a fuego alto con vegetales.", "Acompaña con el puré de papa."]
+    },
+    cena: {
+      nombre: "Ensalada César con pollo",
+      descripcion: "Lechuga, pechuga a la plancha y crutones.",
+      ingredientes: ["Lechuga fresca", "100g pechuga", "Crutones y aderezo light"],
+      preparacion: ["Mezcla los ingredientes picados en un bol y adereza."]
+    }
   },
-  {
-    dia: "Miércoles",
-    desayuno: { receta: "Pancakes de banano y avena", desc: "Saludables, servidos con fruta fresca." },
-    almuerzo: { receta: "Pasta integral al pesto", desc: "Con trozos de pollo y tomates cherry." },
-    cena: { receta: "Omelette de champiñones", desc: "Preparado con queso y finas hierbas." }
+  miercoles: {
+    nombreDia: "Miércoles",
+    desayuno: {
+      nombre: "Pancakes de avena y banano",
+      descripcion: "Servidos con frutos rojos.",
+      ingredientes: ["1 banano", "1 huevo", "1/2 taza de avena licuada"],
+      preparacion: ["Licúa todo y cocina porciones pequeñas en sartén."]
+    },
+    almuerzo: {
+      nombre: "Pescado al horno",
+      descripcion: "Filete de pescado con papas al horno.",
+      ingredientes: ["1 filete de pescado", "Papas en rodajas", "Especias"],
+      preparacion: ["Hornea el pescado y papas a 180°C durante 20 minutos."]
+    },
+    cena: {
+      nombre: "Omelette de queso y champiñones",
+      descripcion: "Omelette de 2 huevos con queso fresco.",
+      ingredientes: ["2 huevos", "Champiñones", "Queso fresco"],
+      preparacion: ["Saltea champiñones, agrega el huevo batido y dobla con queso."]
+    }
   },
-  {
-    dia: "Jueves",
-    desayuno: { receta: "Yogur griego con granola", desc: "Acompañado de frutos rojos." },
-    almuerzo: { receta: "Lentejas estofadas con verduras", desc: "Plato tradicional lleno de proteína vegetal." },
-    cena: { receta: "Sándwich de pavo y aguacate", desc: "Con pan multigrano y vegetales." }
+  jueves: {
+    nombreDia: "Jueves",
+    desayuno: {
+      nombre: "Sándwich de jamón y queso",
+      descripcion: "Pan integral dorado al sartén.",
+      ingredientes: ["2 tajadas de pan integral", "Jamón y queso", "Jugo natural"],
+      preparacion: ["Arma el sándwich y dora por ambos lados en sartén."]
+    },
+    almuerzo: {
+      nombre: "Lasaña de carne o verduras",
+      descripcion: "Acompañada de ensalada verde.",
+      ingredientes: ["Láminas de lasaña", "Carne molida o verduras", "Salsa y queso"],
+      preparacion: ["Arma las capas y hornea a 190°C por 30 minutos."]
+    },
+    cena: {
+      nombre: "Wrap de atún con vegetales",
+      descripcion: "Tortilla integral con atún y maíz.",
+      ingredientes: ["1 tortilla integral", "1 lata de atún", "Maíz dulce y lechuga"],
+      preparacion: ["Mezcla el atún con maíz y lechuga, enrolla en la tortilla."]
+    }
   },
-  {
-    dia: "Viernes",
-    desayuno: { receta: "Tostadas de aguacate y huevo", desc: "Pan tostado con aguacate y huevo escalfado." },
-    almuerzo: { receta: "Salmón a la plancha", desc: "Con puré de papas y espárragos al vapor." },
-    cena: { receta: "Pizza casera con masa delgada", desc: "Con queso, vegetales y salsa casera." }
+  viernes: {
+    nombreDia: "Viernes",
+    desayuno: {
+      nombre: "Parfait de yogur con granola",
+      descripcion: "Yogur griego con granola y fruta.",
+      ingredientes: ["1 vaso de yogur griego", "Granola", "Frutas frescas"],
+      preparacion: ["Sirve en capas de yogur, granola y frutas."]
+    },
+    almuerzo: {
+      nombre: "Arroz con pollo",
+      descripcion: "Clásico plato con verduras y papas.",
+      ingredientes: ["Pollo desmechado", "Arroz", "Verduras mixtas"],
+      preparacion: ["Cocina todo junto sazonando al gusto."]
+    },
+    cena: {
+      nombre: "Pizza casera en tortilla",
+      descripcion: "Base delgada con salsa y queso.",
+      ingredientes: ["1 tortilla", "Salsa de tomate", "Queso mozzarella"],
+      preparacion: ["Coloca los ingredientes sobre la tortilla y gratina en sartén."]
+    }
   },
-  {
-    dia: "Sábado",
-    desayuno: { receta: "Waffles integrales", desc: "Servidos con miel de abejas y frutas." },
-    almuerzo: { receta: "Hamburguesa casera de garbanzo", desc: "Con pan artesanal y camote al horno." },
-    cena: { receta: "Tacos vegetarianos", desc: "Con frijoles, maíz dulce, aguacate y pico de gallo." }
+  sabado: {
+    nombreDia: "Sábado",
+    desayuno: {
+      nombre: "Arepa con queso y huevo frito",
+      descripcion: "Acompañada de chocolate caliente.",
+      ingredientes: ["1 arepa", "Queso para asar", "1 huevo"],
+      preparacion: ["Asa la arepa con queso y sirve con el huevo frito."]
+    },
+    almuerzo: {
+      nombre: "Tacos de pollo o carne",
+      descripcion: "Con pico de gallo y guacamole.",
+      ingredientes: ["Tortillas de taco", "Carne o pollo picado", "Guacamole"],
+      preparacion: ["Cocina la carne con especias y arma los tacos."]
+    },
+    cena: {
+      nombre: "Sándwich de pollo desmechado",
+      descripcion: "Servido con papas chips.",
+      ingredientes: ["Pan de sándwich", "Pollo desmechado con aderezo"],
+      preparacion: ["Mezcla el pollo y arma el sándwich."]
+    }
   },
-  {
-    dia: "Domingo",
-    desayuno: { receta: "Desayuno especial de la casa", desc: "Para iniciar con energía el día de descanso." },
-    almuerzo: { receta: "Arroz con pollo tradicional", desc: "Servido con ensalada de la casa y papas." },
-    cena: { receta: "Wrap de pollo y vegetales", desc: "Tortilla rellena de pollo, verduras y salsa suave." }
+  domingo: {
+    nombreDia: "Domingo",
+    desayuno: {
+      nombre: "Tostadas Francesas",
+      descripcion: "Con frutos rojos y miel.",
+      ingredientes: ["Pan de molde", "Huevo, leche y canela", "Miel"],
+      preparacion: ["Pasa el pan por el huevo batido con leche y dora."]
+    },
+    almuerzo: {
+      nombre: "Hamburguesa casera",
+      descripcion: "Con papas rústicas y ensalada.",
+      ingredientes: ["Carne molida", "Pan de hamburguesa", "Queso y vegetal"],
+      preparacion: ["Asa la carne y arma la hamburguesa a tu gusto."]
+    },
+    cena: {
+      nombre: "Sopa de pollo con verduras",
+      descripcion: "Sopa ligera para cerrar la semana.",
+      ingredientes: ["Pechuga de pollo", "Papa y zanahoria", "Cilantro"],
+      preparacion: ["Cocina todo en caldo por 25 minutos y sirve."]
+    }
   }
-];
+};
 
-// Elementos del DOM
-const vistaDias = document.getElementById("vista-dias");
-const vistaDetalle = document.getElementById("vista-detalle");
-const btnVolver = document.getElementById("btn-volver");
-const tituloDia = document.getElementById("titulo-dia");
+let diaSeleccionado = "";
 
-const desayunoPlatillo = document.getElementById("desayuno-platillo");
-const desayunoDesc = document.getElementById("desayuno-desc");
+function verComidas(dia) {
+  diaSeleccionado = dia;
+  const infoDia = recetas[dia];
+  if (!infoDia) return;
 
-const almuerzoPlatillo = document.getElementById("almuerzo-platillo");
-const almuerzoDesc = document.getElementById("almuerzo-desc");
+  document.getElementById("titulo-dia").textContent = `Menú del ${infoDia.nombreDia}`;
+  document.getElementById("preview-desayuno").textContent = infoDia.desayuno.nombre;
+  document.getElementById("preview-almuerzo").textContent = infoDia.almuerzo.nombre;
+  document.getElementById("preview-cena").textContent = infoDia.cena.nombre;
 
-const cenaPlatillo = document.getElementById("cena-platillo");
-const cenaDesc = document.getElementById("cena-desc");
+  document.getElementById("vista-dias").classList.add("oculta");
+  document.getElementById("vista-receta").classList.add("oculta");
+  document.getElementById("vista-comidas").classList.remove("oculta");
+  window.scrollTo(0, 0);
+}
 
-// Generar las tarjetas de los días
-function renderDias() {
-  vistaDias.innerHTML = "";
-  menuSemana.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "card-dia";
-    card.innerHTML = `
-      <h2>${item.dia}</h2>
-      <p>Ver menú →</p>
-    `;
-    card.addEventListener("click", () => verDetalle(item));
-    vistaDias.appendChild(card);
+function volverADias() {
+  document.getElementById("vista-comidas").classList.add("oculta");
+  document.getElementById("vista-receta").classList.add("oculta");
+  document.getElementById("vista-dias").classList.remove("oculta");
+  window.scrollTo(0, 0);
+}
+
+function verReceta(tipoComida) {
+  const infoDia = recetas[diaSeleccionado];
+  if (!infoDia) return;
+
+  const receta = infoDia[tipoComida];
+  if (!receta) return;
+
+  let icono = "🍳";
+  let textoTipo = "Desayuno";
+  if (tipoComida === "almuerzo") { icono = "🍗"; textoTipo = "Almuerzo"; }
+  if (tipoComida === "cena") { icono = "🥗"; textoTipo = "Cena"; }
+
+  document.getElementById("receta-tipo-tag").textContent = `${icono} ${textoTipo}`;
+  document.getElementById("receta-titulo").textContent = receta.nombre;
+  document.getElementById("receta-descripcion").textContent = receta.descripcion;
+
+  const listaIngredientes = document.getElementById("receta-ingredientes");
+  listaIngredientes.innerHTML = "";
+  receta.ingredientes.forEach(ing => {
+    const li = document.createElement("li");
+    li.textContent = ing;
+    listaIngredientes.appendChild(li);
   });
+
+  const listaPreparacion = document.getElementById("receta-preparacion");
+  listaPreparacion.innerHTML = "";
+  receta.preparacion.forEach(paso => {
+    const li = document.createElement("li");
+    li.textContent = paso;
+    listaPreparacion.appendChild(li);
+  });
+
+  document.getElementById("vista-comidas").classList.add("oculta");
+  document.getElementById("vista-receta").classList.remove("oculta");
+  window.scrollTo(0, 0);
 }
 
-// Abrir detalle del día
-function verDetalle(item) {
-  tituloDia.textContent = `Menú del ${item.dia}`;
-
-  desayunoPlatillo.textContent = item.desayuno.receta;
-  desayunoDesc.textContent = item.desayuno.desc;
-
-  almuerzoPlatillo.textContent = item.almuerzo.receta;
-  almuerzoDesc.textContent = item.almuerzo.desc;
-
-  cenaPlatillo.textContent = item.cena.receta;
-  cenaDesc.textContent = item.cena.desc;
-
-  vistaDias.classList.add("oculta");
-  vistaDetalle.classList.remove("oculta");
+function volverAComidas() {
+  document.getElementById("vista-receta").classList.add("oculta");
+  document.getElementById("vista-comidas").classList.remove("oculta");
+  window.scrollTo(0, 0);
 }
-
-// Botón para regresar a los días
-btnVolver.addEventListener("click", () => {
-  vistaDetalle.classList.add("oculta");
-  vistaDias.classList.remove("oculta");
-});
-
-// Inicializar
-renderDias();
