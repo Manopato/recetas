@@ -2,21 +2,22 @@ const recetas = {
   lunes: {
     nombreDia: "Lunes",
     desayuno: {
-      nombre: "Huevos revueltos con espinaca",
-      descripcion: "Acompañados de tostadas integrales y café.",
+      nombre: "arepuelas con huevo frito",
+      descripcion: "Acompañados de chocolate o aguapanela.",
       ingredientes: [
-        "2 huevos grandes",
-        "1 taza de espinaca fresca picada",
-        "2 rebanadas de pan integral",
-        "1 cucharadita de aceite de oliva",
-        "Sal y pimienta al gusto"
+        "huevos grandes",
+        "harina",
+        "chocolate en pastilla",
+        "azucar,sal",
+        "agua",
+        "leche"
       ],
       preparacion: [
-        "Calienta el aceite de oliva en una sartén a fuego medio.",
-        "Agrega la espinaca y saltea durante 1-2 minutos.",
-        "Bate los huevos con una pizca de sal y agrégalos a la sartén.",
-        "Cocina revolviendo suavemente hasta que queden esponjosos.",
-        "Sirve acompañado de tostadas e infusión o café."
+        "En un recipiente mezcla la harina con una pizca de sal y azúcar. Agrega poco a poco agua y leche hasta obtener una masa suave y manejable..",
+        "Toma con una cuchara la masa y gregala en sarten con aceite caliente hasta tomar conssitencia.",
+        "en otra sarten frie los huevos al gusto.",
+        "en una olleta prepara el chocolate.",
+        "Sirve todo de manera ordenada."
       ]
     },
     almuerzo: {
