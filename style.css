@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+/* Título principal más grande y destacado */
+header h1 {
+  color: #e67e22;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.25rem;
+  color: #666;
+}
+
+.oculta {
+  display: none !important;
+}
+
+/* --- VISTA DE DÍAS (Ancho expandido) --- */
+.grid-dias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1400px; /* Aumentado para ocupar casi toda la pantalla */
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Tarjetas de días más grandes y espaciosas */
+.card-dia {
+  background: white;
+  border-radius: 16px;
+  padding: 50px 25px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.card-dia:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  background-color: #fffaf5;
+}
+
+.card-dia h2 {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.card-dia p {
+  color: #e67e22;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+/* --- VISTA DE DETALLE --- */
+.vista-detalle {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.btn-volver {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-volver:hover {
+  background-color: #d35400;
+  transform: translateX(-4px);
+}
+
+#titulo-dia {
+  color: #2c3e50;
+  font-size: 2.8rem;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.grid-comidas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.card-comida {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  border-top: 6px solid #e67e22;
+}
+
+.card-comida h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+}
+
+.card-comida .platillo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+
+.card-comida .descripcion {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}

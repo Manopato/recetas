@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetas de la Semana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍲 Recetas de la Semana</h1>
+    <p>Selecciona un día para ver el menú</p>
+  </header>
+
+  <!-- Vista Principal: Cuadrícula de Días -->
+  <main id="vista-dias" class="grid-dias">
+    <!-- Se genera dinámicamente desde app.js -->
+  </main>
+
+  <!-- Vista Detalle: Desayuno, Almuerzo y Cena -->
+  <main id="vista-detalle" class="vista-detalle oculta">
+    <button id="btn-volver" class="btn-volver">← Volver a los días</button>
+    <h2 id="titulo-dia"></h2>
+    
+    <div class="grid-comidas">
+      <div class="card-comida">
+        <h3>🍳 Desayuno</h3>
+        <p class="platillo" id="desayuno-platillo"></p>
+        <p class="descripcion" id="desayuno-desc"></p>
+      </div>
+
+      <div class="card-comida">
+        <h3>🍗 Almuerzo</h3>
+        <p class="platillo" id="almuerzo-platillo"></p>
+        <p class="descripcion" id="almuerzo-desc"></p>
+      </div>
+
+      <div class="card-comida">
+        <h3>🥗 Cena</h3>
+        <p class="platillo" id="cena-platillo"></p>
+        <p class="descripcion" id="cena-desc"></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
